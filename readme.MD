@@ -42,3 +42,17 @@
 Если от клиента поступил параметр request_id, он переправляется внутренним сервисам, если такого параметра нет, идентификатор генерится сервисом и передается к внутенним сервисам.
 
 Все сервисы системы ведут логирование зпросов и ответов обработчиков.
+
+Структура .env файла:
+
+POSTGRES_USERNAME=postgres
+POSTGRES_PASSWORD=********
+POSTGRES_DATABASE=final
+APIGATEWAY_ADDRESS=localhost:8080
+NEWS_ADDRESS=localhost:8081
+COMMENTS_ADDRESS=localhost:8082
+CENSOR_ADDRESS=localhost:8083
+NEWS_PER_PAGE=15
+RSS_CONFIG=rss.json
+
+Т.к. логирование ведется в стандартный вывод, запускать сервисы нужно в разных консолях.
