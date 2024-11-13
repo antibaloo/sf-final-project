@@ -42,6 +42,12 @@ type rssReader struct {
 
 // Метод создает структуру ридера новостей
 func CreateService(config []byte, db storage.Store) (*rssReader, error) {
+	if len(config) == 0 {
+		return nil, fmt.Errorf("не передана конфигурация сервиса")
+	}
+	if db == nil {
+		return nil, fmt.Errorf("не указана база данных")
+	}
 	var rss rssReader
 	err := json.Unmarshal(config, &rss)
 	if err != nil {

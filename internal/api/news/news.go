@@ -39,10 +39,10 @@ type newsService struct {
 // Конструктор структуры сервиса новостей
 func CreateService(address string, n int, db storage.Store) (*newsService, error) {
 	if address == "" {
-		return nil, fmt.Errorf("адрес обязательный параметр")
+		return nil, fmt.Errorf("не указан адрес запуска сервиса")
 	}
 	if db == nil {
-		return nil, fmt.Errorf("объек БД обязательный параметр")
+		return nil, fmt.Errorf("не указана база данных")
 	}
 
 	return &newsService{

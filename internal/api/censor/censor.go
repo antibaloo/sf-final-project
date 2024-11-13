@@ -26,10 +26,10 @@ type censor struct {
 // Конструктор сервиса проверки комментариев
 func CreateService(address string, db storage.Store) (*censor, error) {
 	if address == "" {
-		return nil, fmt.Errorf("адрес сервиса отсутствует")
+		return nil, fmt.Errorf("не указан адрес запуска сервиса")
 	}
 	if db == nil {
-		return nil, fmt.Errorf("указательна структуру БД отсутствует")
+		return nil, fmt.Errorf("не указана база данных")
 	}
 	return &censor{
 		dictionary: []string{},
